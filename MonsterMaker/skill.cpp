@@ -1,28 +1,14 @@
 #include "skill.h"
 
-Skill::Skill(skillName newName, abilityScore ability=abilityScore::max, bool isProf = true, bool isExpert=false)
+
+std::string Skill::createCSVEntry()
 {
-	this->name = newName;
-	if (ability == abilityScore::max)
-		this->associatedAbility = defaultAbility(newName);
-	else
-		this->associatedAbility = ability;
-	this->proficient = isProf;
-	this->expertise = isExpert;
-}
-Skill::Skill(abilityScore ability, bool isProf=true)
-{
-	this->name = skillName::savingThrow;
-	this->associatedAbility = ability;
-	this->proficient = isProf;
-	this->expertise = false;
-}
-Skill::Skill()
-{
-	this->name = skillName::min;
-	this->associatedAbility = (abilityScore)0;
-	this->proficient = false;
-	this->expertise = false;
+	std::string output = "";
+	output += (char)name;
+	output += (char)associatedAbility;
+	output += (char)proficient;
+	output += (char)expertise;
+	return output;
 }
 
 skillName Skill::getName()
@@ -52,17 +38,19 @@ abilityScore Skill::getAbility()
 void Skill::setProficiency(bool prof)
 {
 	proficient = prof;
+	return;
 }
 
 void Skill::setExpertise(bool expert)
 {
 	expertise = expert;
+	return;
 }
 
 
 int scoreToMod(int score)
 {
-	return floor((score / 2) - 5);
+	return (int) std::floor((double)(score / 2) - 5);
 }
 
 abilityScore defaultAbility(skillName skill)
@@ -154,6 +142,107 @@ std::ostream& operator<< (std::ostream& lhs, skillName rhs)
 	default:
 		return lhs;
 	}
+}
+
+std::istream& operator>> (std::istream& lhs, skillName& rhs)
+{
+	std::string skill;
+	lhs >> skill;
+
+	shaveAstrerisks(skill);
+
+	if (skill == "acrobatics" || skill == "Acrobatics")
+	{
+		rhs = skillName::acrobatics;
+		return lhs;
+	}
+	if (skill == "animal handling" || skill == "Animal Handling")
+	{
+		rhs = skillName::animalHandling;
+		return lhs;
+	}
+	if (skill == "arcana" || skill == "Arcana")
+	{
+		rhs = skillName::arcana;
+		return lhs;
+	}
+	if (skill == "athletics" || skill == "Athletics")
+	{
+		rhs = skillName::athletics;
+		return lhs;
+	}
+	if (skill == "deception" || skill == "Deception")
+	{
+		rhs = skillName::deception;
+		return lhs;
+	}
+	if (skill == "history" || skill == "History")
+	{
+		rhs = skillName::history;
+		return lhs;
+	}
+	if (skill == "insight" || skill == "Insight")
+	{
+		rhs = skillName::insight;
+		return lhs;
+	}
+	if (skill == "intimidation" || skill == "Intimidation")
+	{
+		rhs = skillName::intimidation;
+		return lhs;
+	}
+	if (skill == "investigation" || skill == "Investigation")
+	{
+		rhs = skillName::investigation;
+		return lhs;
+	}
+	if (skill == "medicine" || skill == "Medicine")
+	{
+		rhs = skillName::medicine;
+		return lhs;
+	}
+	if (skill == "nature" || skill == "Nature")
+	{
+		rhs = skillName::nature;
+		return lhs;
+	}
+	if (skill == "perception" || skill == "Perception")
+	{
+		rhs = skillName::perception;
+		return lhs;
+	}
+	if (skill == "performance" || skill == "Performance")
+	{
+		rhs = skillName::performance;
+		return lhs;
+	}
+	if (skill == "persuasion" || skill == "Persuasion")
+	{
+		rhs = skillName::persuasion;
+		return lhs;
+	}
+	if (skill == "religion" || skill == "Religion")
+	{
+		rhs = skillName::religion;
+		return lhs;
+	}
+	if (skill == "sleight of hand" || skill == "Sleight Of Hand")
+	{
+		rhs = skillName::sleightOfHand;
+		return lhs;
+	}
+	if (skill == "stealth" || skill == "Stealth")
+	{
+		rhs = skillName::stealth;
+		return lhs;
+	}
+	if (skill == "survival" || skill == "Survival")
+	{
+		rhs = skillName::survival;
+		return lhs;
+	}
+	rhs = skillName::min;
+	return lhs;
 }
 
 std::ostream& operator<< (std::ostream& lhs, abilityScore rhs)

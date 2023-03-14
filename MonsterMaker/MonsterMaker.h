@@ -1,8 +1,12 @@
-﻿// MonsterMaker.h : Include file for standard system include files,
-// or project specific include files.
-
-#pragma once
+﻿#pragma once
 
 #include <iostream>
+#include <fstream>
+#include <filesystem>
 
-// TODO: Reference additional headers your program requires here.
+#include "monster.h"
+#include "strManip.h"
+
+Monster importMonster(std::fstream* input);
+void exportToCSV(std::fstream* output, Monster* monster);
+Monster importFromCSV(std::fstream* intput);

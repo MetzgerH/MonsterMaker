@@ -7,3 +7,4 @@ project ("MonsterMaker")
 
 # Include sub-projects.
 add_subdirectory ("MonsterMaker")
+# add_executable(MonsterMaker MonsterMaker.cpp monster.cpp attack.cpp skill.cpp)

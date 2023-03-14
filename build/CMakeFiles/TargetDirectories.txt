@@ -1,0 +1,5 @@
+/mnt/c/users/emetz/onedrive/documents/Dungeons and Dragons/Monster Generator/MonsterMaker/build/CMakeFiles/edit_cache.dir
+/mnt/c/users/emetz/onedrive/documents/Dungeons and Dragons/Monster Generator/MonsterMaker/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/users/emetz/onedrive/documents/Dungeons and Dragons/Monster Generator/MonsterMaker/build/MonsterMaker/CMakeFiles/MonsterMaker.dir
+/mnt/c/users/emetz/onedrive/documents/Dungeons and Dragons/Monster Generator/MonsterMaker/build/MonsterMaker/CMakeFiles/edit_cache.dir
+/mnt/c/users/emetz/onedrive/documents/Dungeons and Dragons/Monster Generator/MonsterMaker/build/MonsterMaker/CMakeFiles/rebuild_cache.dir
