@@ -1,6 +1,6 @@
 # MonsterMaker
 This is a program made for storing, manipulating, importing, and exporting Dungeonns and Dragons fifth edition monster statblocks. WIP<br><br><br>  
-Current functions:
+Implemented capabilities:
 - Storage capabilities for creatures, including 29 attributes (see implemented attributes list below)
 - Importing from markdown according to the standard set by https://5e.tools/bestiary (this standard is also used by https://homebrewery.naturalcrit.com)
 - Exporting as a CSV (custom format)
